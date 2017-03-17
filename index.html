@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<canvas id="flash" widht="300" height="200"></canvas>
+<script type="text/javascript">
+    var a=document.getElementById("flash").getContext("2d");
+	var offset=0;
+	function draw(){
+       offset++;
+	   if (offset>16) {
+	       offset=0;
+	   }
+	   a.clearRect(0,0,300,200);
+	   a.setLineDash([6,2]);
+	   a.lineDashOffset=-offset;
+	   a.strokeRect(10,10,100,100);
+	}
+	setInterval(draw,20);
+</script>
+</body>
+</html>
